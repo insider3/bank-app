@@ -1,0 +1,60 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Account info styles */
+  .account-info {
+    margin: 20px;
+  }
+  
+  .account-info h2 {
+    margin-bottom: 10px;
+  }
+  
+  /* Transaction history styles */
+  .transaction-history {
+    margin: 20px;
+  }
+  
+  .transaction-history h2 {
+    margin-bottom: 10px;
+  }
+  
+  .transaction-history ul li {
+    margin-bottom: 5px;
+  }
+  

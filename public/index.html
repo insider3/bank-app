@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Node.js App</title>
+  <style>
+    body {
+      background-image: url("./images/352115.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function login(event) {
+      // Prevent form submission
+      event.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => {
+        if (response.ok) {
+          window.location.href = '/account-summary.html';
+        } else {
+          alert('Invalid credentials');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Bind login function to the form's submit event
+      const loginForm = document.getElementById('loginForm');
+      loginForm.addEventListener('submit', login);
+    });
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/news">News</a></li>
+    </ul>
+  </nav>
+
+  <div>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</body>
+</html>

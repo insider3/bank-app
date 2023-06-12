@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank Security News</title>
+  <style>
+        body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav {
+      background-color: black;
+      color: white;
+      padding: 10px;
+    }
+    
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    
+    nav ul li {
+      margin-right: 10px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+
+    .hero-bar {
+    padding-top: 150px; /* Adjust the value as needed */
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+  }
+
+    .hero-image.hide {
+      display: none;
+    }
+
+    .news-section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .news-story {
+      margin-bottom: 20px;
+    }
+
+    .news-story h3 {
+      margin-top: 0;
+    }
+
+    .news-story p {
+      line-height: 1.5;
+    }
+  </style>
+  <script>
+    // Function to cycle through hero images
+    function cycleHeroImages() {
+      const heroImages = document.querySelectorAll('.hero-image');
+      let currentIndex = 0;
+
+      setInterval(() => {
+        heroImages[currentIndex].classList.add('hide');
+        currentIndex = (currentIndex + 1) % heroImages.length;
+        heroImages[currentIndex].classList.remove('hide');
+      }, 3000);
+    }
+  </script>
+</head>
+<body onload="cycleHeroImages()">
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/news">News</a></li>
+    </ul>
+  </nav>
+  <div class="hero-bar">
+    <img class="hero-image" src="./images/image1.jpg" alt="Hero Image 1"> <!-- Replace with your image URL -->
+    <img class="hero-image hide" src="./images/image2.jpg" alt="Hero Image 2"> <!-- Replace with your image URL -->
+    <img class="hero-image hide" src="./images/image3.jpg" alt="Hero Image 3"> <!-- Replace with your image URL -->
+  </div>
+
+  <section class="news-section">
+    <div class="news-story">
+      <h3>Increased Cyber Attacks on Banks</h3>
+      <p>
+        In recent months, there has been a significant rise in cyber attacks targeting financial institutions.
+        Hackers are exploiting vulnerabilities in banking systems to gain unauthorized access and steal sensitive
+        customer information. Banks are advised to strengthen their security measures to mitigate these threats.
+      </p>
+    </div>
+
+    <div class="news-story">
+      <h3>New Phishing Scams Targeting Bank Customers</h3>
+      <p>
+        A new wave of phishing scams has emerged, specifically targeting bank customers. Fraudsters are sending
+        deceptive emails and text messages pretending to be from banks, luring customers to provide their login
+        credentials or other personal information. Customers should remain cautious and report any suspicious
+        messages to their banks.
+      </p>
+    </div>
+
+    <div class="news-story">
+      <h3>Regulatory Updates for Enhanced Bank Security</h3>
+      <p>
+        Regulatory bodies are implementing stricter measures to enhance bank security. Financial institutions
+        are required to adhere to updated security protocols and conduct regular risk assessments to ensure the
+        protection of customer data. Banks must stay informed about these regulations and comply accordingly.
+      </p>
+    </div>
+
+    <div class="news-story">
+      <h3>Importance of Multi-Factor Authentication in Banking</h3>
+      <p>
+        Multi-factor authentication (MFA) is gaining importance in the banking sector. By adding an additional
+        layer of verification, such as a fingerprint scan or a one-time password, banks can
